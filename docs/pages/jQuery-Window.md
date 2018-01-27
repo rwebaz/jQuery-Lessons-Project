@@ -1,15 +1,33 @@
 ---
-title: The Flammarion
+title: jQuery Window
 layout: default
-navigation_weight: 9
+navigation_weight: 8
 ---
-# The Flammarion
+# jQuery Window
 
-The Flammarion is an ancient portrait of a medieval man poking his head into the ether.
+{{ site.description }}
 
 {% include toc-flammarion.md %}
 
-{% include flammarion-svg.md %}
+## First Subtitle
+
+Place the introducing line of text ie.) the 'tagline' here ...
+
+## Import Code
+
+More to come ...
+
+## Last Subtitle
+
+Place the introducing line of text ie.) the 'tagline' here ...
+
+```liquid
+{% raw %}
+Enjoy the successful output!
+{% endraw %}
+```
+
+{% include brackets-ide.md %}
 
 {% include sources-and-uses.md %}
 

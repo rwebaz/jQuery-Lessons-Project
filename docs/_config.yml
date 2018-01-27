@@ -1,10 +1,6 @@
 # Site settings
-# exclude:
-# - Gemfile
-# - Gemfile.lock
+# 
 # Date of this Update to Config-template file ver 01-01-2018
-#
-# github: [metadata]
 #
 # Uncomment theme for docs folder
 theme: "jekyll-theme-cayman"
@@ -16,8 +12,8 @@ theme: "jekyll-theme-cayman"
 # repository: https://www.github.com/rwebaz/jQuery-Lessons-Project
 #
 title: "jQuery Lessons Project"
-tagline: "A GitHub repo of Lessons and Articles that emphasize the jQuery Javascript Library"
-description: "A GitHub repo of Lessons and Articles that emphasize the jQuery Javascript Library."
+tagline: "A GitHub repo of Lessons and Articles that emphasize the jQuery Javascript library"
+description: "The jQuery Lessons Project, or JQLP is a GitHub repo of Lessons and Articles emphasizing the jQuery Javascript library."
 twitter:
     username: "mminail"
 author:
@@ -25,7 +21,7 @@ author:
     email: "mminail@icloud.com"
     github_username: "rwebaz"
     twitter_username: "rwebaz"
-# The 'baseurl' is the subpath of your designated project, e.g. /Liquid-Lessons-Project or /blog or simply "/"
+# The 'baseurl' is the subpath of your designated project, e.g. /Blank-Lessons-Project or /blog or simply "/"
 baseurl: "/jQuery-Lessons-Project"
 # The 'url' is the parental web address of your designated project, e.g. https://mminail.github.io
 url: "https://rwebaz.github.io"
@@ -81,3 +77,7 @@ plugins_dir:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Gemfile.old
