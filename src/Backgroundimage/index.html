@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery CSS Background Image Example</title>
+</head>
+<body>
+<!-- STYLE SECTION  -->
+<style type="text/css">
+html {
+    font-family: "Arial";
+}
+.content, .content1 {
+    width: 20em;
+    height: 10em;
+    margin: 1em;
+    background-color: #005273;
+    text-align: center;
+    line-height: 10em;
+    color: white;
+    border-radius: 0.5em;
+}
+
+.content1 {
+    width: 25em;
+    height: 15em;
+    margin: 5em;
+    background-color: #005273;
+    text-align: center;
+    line-height: 8em;
+    color: white;
+    border-radius: 0.5em;
+}
+</style>
+
+<!-- HTML SECTION  -->
+<!-- UNCOMMENT THE LINES ONE BY ONE TO SEE THE DESIRED RESULTS -->
+<span class="result">&nbsp;</span>  <!-- show the computed results here -->
+<!-- <div class="content">Click to show two of my css properties.</div> -->
+<!-- <div class="content">Look at my background image.</div> -->
+<div class="content1"><p>Click to show my background image.</p></div>
+
+<!-- JAVASCRIPT SECTION  -->
+<script src="jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+/*    $(function (){
+        var html = [ "The clicked div has the following styles:" ];
+        $('.content').click(function(){*/ /*results will be shown on click*/
+            /*store the css properties array in a variable*/
+            /*var properties = $(this).css(["width", "height", "background-color", "color"]);*/
+            /*concatinate several properties and attach them to some other element*/
+/*              $.each( properties, function( prop, value ) {
+                html.push( prop + ": " + value );
+              });
+              $( ".result" ).html( html.join( "<br>" ) );
+        });
+    })*/
+</script>
+
+<script type="text/javascript">
+/*    $(function (){*/
+        /*$('.content').css('background-color', '#51326F');*/
+        /*$('.content').css('background-image', 'url(bg.jpg)');*/
+ /*   })*/
+</script>
+
+<script type="text/javascript">
+    $('.content1').click(function(){
+            $(this).css('background-image','url(bg1.jpg)');
+            $(this).find('p').hide();
+            $(this).html("Nice Job, User!");
+    });
+</script>
+
+</body>
+</html>
+
+

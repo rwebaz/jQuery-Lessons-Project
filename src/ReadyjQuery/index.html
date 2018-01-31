@@ -5,15 +5,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Ready jQuery</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body style="font-family: Raleway">
     <hgroup class='text-left'>
       <h4 id="title">$('title')</h4>
     </hgroup>
       <hr class='green-groove' />
 
-    <div id="content">...</div>
+      <div id="content">...</div>
+ 
+    <hgroup class='text-left'>
+      <h4 >jQuery Document Ready Example</h4>
+    </hgroup>
+      <hr class='green-groove' />
+
+    <div class="element1">
+      <span>To try out document ready and window load, add a heavily loaded page with lots of elements in the HTML section and execute specific code on document ready and window load.</span>
+    </div>
+
+    <section class="element1">
+        <span>Uncomment lines then in the JS section to (merely) see results for each specific case.</span>
+    </section>
+
+    <!-- JAVASCRIPT SECTION  -->
+    <script src="jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+    //do jQuery stuff when DOM is ready
+    });
+    </script>
+
+    <script type="text/javascript">
+    /*$(function(){
+    //jQuery code here
+    });*/
+    </script>
+
+    <script type="text/javascript">
+    /*jQuery(document).ready(function($) {
+    //do jQuery stuff when DOM is ready
+    });*/
+    </script>
+
+    <script type="text/javascript">
+    /*(function($) {
+    // code using $ as alias to jQuery
+    $(function() {
+    // more code using $ as alias to jQuery
+    });
+    })(jQuery);*/
+    // other code using $ as an alias to the other library
+    </script>
+
+    <script type="text/javascript">
+    /*$(window).load(function(){
+    //initialize after images are loaded
+    });*/
+    </script>
 
 <!-- Place all scripts above the closing body tag -->
 
