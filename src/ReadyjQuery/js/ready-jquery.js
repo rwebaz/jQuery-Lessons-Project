@@ -10,6 +10,7 @@
 // Import the jQuery library
 // Shd be automatic from corresponding Html page
 // require("jquery");
+import $ from "jquery";
 
 // Set the global variable
 var Medmj = jQuery.noConflict();
