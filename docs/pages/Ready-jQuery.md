@@ -1,83 +1,70 @@
 ---
 title: Ready jQuery
 layout: default
+excerpt: Confirmation must be received in the form of a message from the DOM ...
+version: Page Template md Dtd 02-10-18
 navigation_weight: 8
+categories: DOM
 ---
-# Ready jQuery
+# {{ page.title }}
 
-Confirmation must be received in the form of a message BEFORE an event can fire in jQuery.
+{{ page.excerpt }}
 
-{% include toc-flammarion.md %}
+{% include toc.md %}
 
-## Document On Load
+## Window onLoad
 
-The following long-cut checks to make sure the DOM *excluding* images and iframes has been loaded before acting ...
+There is no short-cut in the properties and methods of the jQuery object to replace the jQuery `$(window).load` statement.
 
-```javascript
-{% raw %}
-$(document).ready
-{% endraw %}
-```
+Because the underlying `window.onload` method is a property of your browser.
 
-**Note**. Where the dollar sign `$` is an *alias* for the jQuery Object `jQuery`.
+The `window.onload` method waits until ALL of the assets of the subject page have been loaded including images and iframes prior to sending its *ready* message.
 
-### Short-cut Anyone
+Whereas, the `$(document).ready` function and method of jQuery that we will introduce shortly ...
 
-The following short-cut in jQuery optionally replaces the `$(document).ready` statement ...
+Waits merely for the browser to complete the construction of the DOM prior to sending its *ready* message.
 
-- with a single dollar sign `$` aka "The Alias", and
+Therefore, the `window.onload` method of your browser may be invoked AFTER our newly proposed `job()` function.
 
-- a set of parenthesis to capture an argument
+For example, the following code waits for confirmation from the window Object upon total *load* ...
+
+- Then, fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as argument to the *load* method.
+
+In jQuery ...
 
 As follows,
 
 ```javascript
 {% raw %}
-$()
-{% endraw %}
-```
-
-## Window On Load
-
-Likewise, the following long-cut checks to make sure the entire page *including* images and iframes has been loaded before acting ...
-
-```javascript
-{% raw %}
-$(window).load
-{% endraw %}
-```
-
-**Note**. There is no short-cut in jQuery to replace the `$(window).load` statement.
-
-For example, the following code waits for confirmation from the window Object upon total *load* ...
-
-- Then, fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as argument to the *load* method
-
-```javascript
-{% raw %}
 $(window).load(function(){
-  console.log(`The page is now fully loaded. The Html has been parsed. ➡️
-  The DOM has been rendered.
-  All of the assets of the page have been uploaded to the browser.
+  return console.log(`The page is now fully loaded. ➡️
+  The Html has been parsed. ➡️
+  The DOM has been rendered. ➡️
+  All of the assets of the page have been uploaded to the browser. ➡️
   We can now go to work.`)
 });
 {% endraw %}
 ```
 
-Similarly, the following code waits for the confirmation message from the Html parser via the document Object ...
+Similarly, the following code waits for the confirmation message from the Html parser via the document Object.
 
-And, upon DOM *ready* ...
+And, upon Document Object Model, or [DOM](https://){:title='Document Object Model'}{:target='_blank'} *readiness* ...
 
-- Fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as argument to the *ready* method, as follows:
+- Fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as argument to the *ready* method.
+
+Also in jQuery ...
+
+As follows,
 
 ```javascript
 {% raw %}
 $(document).ready(function(){
-  console.log(`The Html has been parsed. The DOM has been rendered. ➡️ 
-  All of the assets of the page (perhaps) ...
-  Are still in the process of being uploaded to the browser ...
-  Depending on their weight and bandwidth.
-  The page is most probably now NOT fully loaded.
+  return console.log(`The Html has been parsed. ➡️
+  The DOM has been rendered. ➡️
+  All of the assets of the page (perhaps) ... ➡️
+  Are still in the process of being uploaded to the browser ... ➡️
+  Depending on their weight and bandwidth. ➡️
+  The page is most probably now NOT fully loaded. ➡️
   But, nevertheless ... we can go to work.`)
 });
 {% endraw %}
@@ -85,19 +72,65 @@ $(document).ready(function(){
 
 ### Anonymous Function Wrappers
 
-Both of the long-cuts shown above and by extension the single short-cut ...
+Both of the *long-cut* statements shown above and by extension the single built in jQuery *short-cut* `$()` ...
 
-- Place an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} next inline as an argument that fires when the respective condition is met, as follows:
+- Can place an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} next inline as an argument that fires when the respective `ready` condition is met, as follows:
 
 ```javascript
 {% raw %}
-(function() {});
+job(function(){});
 {% endraw %}
 ```
 
-**Note**. An [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} can be the parameter that fills the single set of parenthesis as argument to the jQuery short-cut `$()` shown above.
+**Note**. An [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} can be the parameter that fills the single set of parenthesis as argument to the `jQuery(document).ready` function and method.
 
-## Collisions
+As previously, under the representation of the built-in jQuery short-cut `$()` ...
+
+And, also via our soon to *override* global `job` variable, as shown below.
+
+## Da DOM
+
+BEFORE an event can fire in jQuery, confirmation in the form of a message must be received from the Document Object Model, or [DOM](https://){:title='Document Object Model'}{:target='_blank'}.
+
+### jQuery $
+
+Out of the box, the jQuery object provides a jQuery function represented by the dollar sign `$` that accepts a single parameter for its solo argument, as follows:
+
+```javascript
+{% raw %}
+$()
+{% endraw %}
+```
+
+Quickly, however, we can embellish upon the out of the box jQuery function by placing the `document` parameter inside the set of parenthesis reserved for the argument of the jQuery function and by *chaining* the `ready` method of the jQuery object to the argument, as follows:
+
+```javascript
+{% raw %}
+$(document).ready
+{% endraw %}
+```
+
+Here, the jQuery object is invoked to accomplish the feat of confirming the readiness of the [DOM](https://){:title='Document Object Model'}{:target='_blank'}.
+
+The `ready` method is *chained* to the jQuery function after inserting the top-node of the DOM aka the `document` as the parameter for the solo argument taken by the jQuery function.
+
+**Note**. The dollar sign `$` is a built-in *substitute symbol* for the term `jQuery`.
+
+And, that *substitute symbol* can be changed programatically.
+
+### Let There Be Brevity
+
+A `let` statement can be used in place of the now chained `$(document).ready` function and method, as follows:
+
+```javascript
+{% raw %}
+let job = jQuery.noConflict(document).ready;
+{% endraw %}
+```
+
+However, the now scoped `job` variable cannot be used to call DOM elements outside of its placement after the DOM has been built by the browser.
+
+### Collisions
 
 *Roll Ur Own* to avoid collisions.
 
@@ -107,34 +140,47 @@ But, you can ... with jQuery.
 
 If the short-cut `$()` can be used to replace `$(document).ready`, then why not we?
 
-First, let's set the corresponding global variable and hope no other namespace pollutes ours ...
+First, let's set the following *global* variable and hope with a high level of confidence that no other namespace will pollute ours.
+
+In the micro-scope of the `let` variable we should be good to go.
+
+However, in the *global* hoisted scope of our program, we may not.
+
+We must make the new alias `job` available throughout the many functions and methods of our program.
+
+To allow for this *expanded* level of functionality, we will have to expose the new `job` variable to *the elements* of our entire program, as follows:
 
 ```javascript
 {% raw %}
-var Medmj = jQuery.noConflict();
+var job = jQuery.noConflict(document).ready;
 {% endraw %}
 ```
 
-Now, let's plug the var `Medmj` into our jQuery Object `jQuery` from above, running with the following algebraic steps ...
+Notice how we have had to switch from the more modern, `ES6` scoped variable keyword of `let` ...
 
+Back to the original plain-vanilla Javascript variable aka the more *global* variable keyword of `var`.
 
-1. `$() = $(document).ready()`
+Now, let's plug the var `job` into our jQuery object from above.
 
-1. `Medmj() = jQuery.noConflict()`
+Running with the following algorithmic steps ...
 
-1. `$() = jQuery()`
+1. The built-in jQuery function `$()` is transformed to `$(document).ready()`
 
-1. `jQuery = $`
+1. The `job()` function = `jQuery.noConflict(document).ready()`
 
-1. `$(document).ready() = Medmj()`
+1. The parameter of the argument for the `job()` function can be an [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} = `job(function(){});`
 
-**Note**. Where `noConflict` is simply a *chained* method of the jQuery Object `jQuery`.
+**Note**. Where `noConflict` is simply a *chained* method of the jQuery object under previous jQuery incarnations, or versions.
 
 Yields,
 
-```liquid
+```javascript
 {% raw %}
-Medmj(function() {});
+job(function(){
+  return console.log(`The Html has been parsed. ➡️
+  The DOM has been rendered. ➡️
+  We can now go to work.`)
+});
 {% endraw %}
 ```
 
@@ -142,39 +188,67 @@ What have we done?
 
 In a nutshell ...
 
-- We have replaced back the jQuery Object `jQuery` for the alias dollar sign `$`, and
+- We have replaced back to the jQuery object, the jQuery function represented by the term `jQuery` and the alias dollar sign `$`, and
 
-- Subsequently chained the method `noConflict` to the jQuery Object `jQuery`.
+- We have subsequently chained the jQuery object method `noConflict` to the `jQuery` function.
 
-- Next, we have simply equated the jQuery Object `jQuery` now coupled with the method `noConflict` with the value of the global variable `Medmj`.
+- Next, we have simply equated the method `noConflict` now *chained* to the to the value of the global variable `job` ... AFTER
 
-**Note**. Where the method `noConflict` is a resident of the jQuery Object `jQuery` and the now global variable `Medmj` sits and waits for the "DOM is built" message from the Html parser via the underlying `(document).ready` method.
+- Embellishing the `jQuery` function with the `document` node as parameter to the`jQuery.noConflict()` argument coupled with the `ready` method of the jQuery object.
+
+- Then we placed an [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as the parameter to the solo argument of the `job` function.
 
 ## EL Labirinto (The Labyrinth)
 
-Now that we have taken you, dear reader, through the Labyrinth that is the jQuery Object `jQuery` ...
+Now that we have taken you, dear reader, through the opening of the Labyrinth that is the `jQuery` object ...
 
 Let's take it for a spin!
 
+### Execution
+
+Let's craft a simple Javascript program that will accept our new `job` variable.
+
+Simply highlight and copy the following code with your mouse or touchpad via `command + C`, and
+
+- Paste the code into your Javascript console over at an open Chrome browser window.
+
+**Note**. You must first expose the Chrome Developer Toolset, or [CDT](https://){:title='Chrome Developer Toolset'}{:target='_blank'} to invoke the Javascript console command line via a Chrome browser window.
+
+Finally, via `command + V`, paste the code into your Javascript console command line, and
+
+- Hit the `enter` key to execute.
+
 ```javascript
 {% raw %}
+"use strict";
+// As of ES7 the Global use of the strict string pragma is recommended
+// Set the local variable
+// let job = jQuery.noConflict(document).ready;
 // Set the global variable
-var Medmj = jQuery.noConflict();
+var job = $(document).ready;
 // Construct the function
-Medmj(function() {
-  console.log("That's a lot of steps eliminated!")
+job(function(){
+  // Wait for the "DOM is complete" message from the Html parser
+  return console.log(`The Html has been parsed ➡️
+  The DOM has been rendered ➡️
+  We can now go to work.`)
 });
-// Wait for the "DOM is complete" message from the Html parser
 {% endraw %}
 ```
 
+**Note**. We have had to remove the `.noConflict()` method from the chain of events in order to equate the `var` with the namespace `job`.
+
+Does not jQuery version 3.3.1 possess a `.noConflict()` method in the Labyrinth of the newest and resident jQuery object?
+
+Or, has the jQuery `.noConflict()` method been deprecated?
+
 ### Safer Coding
 
-Without the worry of the alias dollar sign `$` being used by another program, our global variable `Medmj` now sits within our jQuery Object `jQuery` labyrinth *hidden*, but accessible.
+Without the worry of the alias dollar sign `$` being used by another program to inadvertently create collisions, our global variable `job` now sits within our our `jQuery` Labyrinth *hidden*, but accessible.
 
 ## Last Subtitle
 
-Place the introducing line of text ie.) the 'tagline' here ...
+**Note**. The above synopsis was derived from an book written by Jonathan Chaffer and Karl Swedberg [[2](#JQUERY4TH){:.red}].
 
 ```liquid
 {% raw %}
@@ -186,6 +260,12 @@ Enjoy the successful output!
 
 {% include sources-and-uses.md %}
 
+1. {:#JQUERY4TH}[Learning jQuery: 4th Edition](https://www.it-ebooks.info/){:title='Click to Visit the Landing page for Learning jQuery, 4th Edition by Jonathan Chaffer and Karl Swedberg'}{:target='_blank'} by Jonathan Chaffer and [[Karl Swedberg](#KSWEDBERG){:.red}]. Published by © 2007 - 2013 [PACKTpub.com](https://www.packtpub.com/){:title='Click to Visit the Home page of Packt Pub dot com'}{:target='_blank'}.
+
 ### External Sources
 
+- {:#KSWEDBERG}[Gmail: Karl Swedberg](Mailto:kswedberg@gmail.com?subject=[Learning jQuery, 4th Edition ...]&body=Hello Karl: I want to thank you for writing Learning jQuery, 4th Edition with Jonathan Chaffer. I have cited your work at my rendition of the 'jQuery Lessons Project' at GitHub Pages ... Robert. C=> //rwebaz.github.io/jQuery-Lessons-Project/pages/Ready-jQuery.md){:title='Click to Launch your designated system email program to send a fully populated electronic letter to the Gmail address of Karl Swedberg'}.
+
 - The [Project Source Links](https://mminail.github.io/jQuery/Source-jQuery-Links.htm){:title="Click to Visit the Source Links page of the jQuery Lessons Project at GitHub pages"}{:target="_blank"} page of the jQuery Lessons Project. Published by © 2017 - 2018 [Mminail.github.io](https://mminail.github.io/){:title="Click to Visit the Concept Library of the Medical Marijuana Initiative of North America - International Limited, an Arizona Benefit Corporation"}{:target="_blank"}.
+
+**Note**. This page crafted with {{ page.version }}.
