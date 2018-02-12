@@ -4,18 +4,19 @@
 // Copyright (c) 2017 - 2018 Robert Weber FBO jQuery Lessons Project
 // C=> https://rwebaz.github.io/jQuery-Lessons-Project/pages/Ready-jQuery.html
 
-"use strict";
-// As of ES7 the Global use of the strict string pragma is recommended
-
 // Import the jQuery library
 // Shd be automatic from corresponding Html page
 // require("jquery");
-import $ from "jquery";
+// import from "jquery";
 
+"use strict";
+// As of ES7 the Global use of the strict string pragma is recommended
+// Set the local variable
+// let job = jQuery.noConflict(document).ready;
 // Set the global variable
-var Medmj = jQuery.noConflict();
+var job = $(document).ready;
 // Construct the function
-Medmj(function() {
-  console.log("That's a lot of steps eliminated!")
+job(function(){
+  // Wait for the "DOM is complete" message from the Html parser
+  return console.log(`The Html has been parsed ➡️ The DOM has been rendered ➡️ We can now go to work.`)
 });
-// Wait for the "DOM is complete" message from the Html parser
