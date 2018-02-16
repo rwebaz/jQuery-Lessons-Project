@@ -1,7 +1,7 @@
 ---
 title: Home Page
 layout: default
-excerpt: Shell tags and Shell statements mimic underlying Javascript methods ...
+excerpt: jQuery tags and jQuery statements mimic underlying Javascript methods ...
 version: Index Template md Dtd 02-10-18
 navigation_weight: 1
 categories: template

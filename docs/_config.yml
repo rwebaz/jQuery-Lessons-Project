@@ -13,8 +13,8 @@ theme: "jekyll-theme-cayman"
 #
 lang: "en-US"
 title: "jQuery Lessons Project"
-tagline: "A GitHub repo of Lessons and Articles that emphasize the jQuery Javascript library"
-description: "The jQuery Lessons Project, or JQLP is a GitHub repo of Lessons and Articles emphasizing the jQuery Javascript library."
+tagline: "A GitHub repo of Lessons and Articles that emphasize the jQuery Core and jQuery Mobile Javascript libraries"
+description: "The jQuery Lessons Project, or JQLP is a GitHub repo of Lessons and Articles emphasizing the jQuery Core and jQuery Mobile Javascript libraries."
 twitter:
     username: "mminail"
 author:
