@@ -14,9 +14,24 @@
 // Set the local variable
 // let job = jQuery.noConflict(document).ready;
 // Set the global variable
-var job = $(document).ready;
+// var job;
+// job = $(document).ready;
 // Construct the function
-job(function(){
+(function($){
   // Wait for the "DOM is complete" message from the Html parser
-  return console.log(`The Html has been parsed ➡️ The DOM has been rendered ➡️ We can now go to work.`)
-});
+  window.console.log('The Html has been parsed ➡️ The DOM has been rendered ➡️ We can now go to work.');
+  $('a').attr({
+    id: function(index, oldValue){
+      return 'flexbox-' + index;
+    },
+    href: 'https://rwebaz.github.io',
+    title: function(){
+      return 'Click to Visit the ' + $(this).text() + ' page of the Flexbox Lessons Project at GitHub Pages';
+    },
+    rel: 'external',
+    target: '_blank'
+  })
+  $('a').mouseover(function(){
+    alert(this.id);
+  });
+})($);
