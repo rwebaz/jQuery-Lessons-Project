@@ -14,21 +14,23 @@ categories: DOM
 
 ## Window onLoad
 
-There is no short-cut in the properties and methods of the jQuery object to replace the jQuery `$(window).load` statement.
+There is no short-cut in the properties and methods of the jQuery object to replace the jQuery `$(window).load` statement with a symbol.
 
-Because the underlying `window.onload` method is a property of your browser.
+A comparable property of your browser is the `window.onload` method.
 
-The `window.onload` method waits until ALL of the assets of the subject page have been loaded including images and iframes prior to sending its *ready* message.
+The `window.onload` method waits until ALL of the assets of the subject page have been loaded including all images and iframes prior to sending a *ready* message.
 
-Whereas, the `$(document).ready` function and method of jQuery that we will introduce shortly ...
+## Document ready
 
-Waits merely for the browser to complete the construction of the DOM prior to sending its *ready* message.
+Whereas, the `$(document).ready` function and method of jQuery waits only for the browser to complete the construction of the Document Object Model, or [DOM](https://){:title='Document Object Model'}{:target='_blank'} prior to sending its *ready* message.
 
 Therefore, the `window.onload` method of your browser may be invoked AFTER our newly proposed `job()` function.
 
+## Job Function
+
 For example, the following code waits for confirmation from the window Object upon total *load* ...
 
-- Then, fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as argument to the *load* method.
+- Then, fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} event handler as argument to the *load* method.
 
 In jQuery ...
 
@@ -46,11 +48,11 @@ $(window).load(function(){
 {% endraw %}
 ```
 
-Similarly, the following code waits for the confirmation message from the Html parser via the document Object.
+Similarly, the following code block waits for the confirmation message from the Html parser via the document Object model.
 
-And, upon Document Object Model, or [DOM](https://){:title='Document Object Model'}{:target='_blank'} *readiness* ...
+And, upon DOM *readiness* ...
 
-- Fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} as argument to the *ready* method.
+- Fires off an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} event handler as argument to the *ready* method.
 
 Also in jQuery ...
 
@@ -74,11 +76,11 @@ $(document).ready(function(){
 
 Both of the *long-cut* statements shown above and by extension the single built in jQuery *short-cut* `$()` ...
 
-- Can place an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} next inline as an argument that fires when the respective `ready` condition is met, as follows:
+- Place an Anonymous Function Wrapper, or [AFW](https://){:title='Anonymous Function Wrapper'}{:target='_blank'} event handler next inline as an argument that fires when the respective `ready` condition is met, as follows:
 
 ```javascript
 {% raw %}
-job(function(){});
+job(function($){});
 {% endraw %}
 ```
 
@@ -98,7 +100,7 @@ Out of the box, the jQuery object provides a jQuery function represented by the 
 
 ```javascript
 {% raw %}
-$()
+$();
 {% endraw %}
 ```
 
@@ -106,7 +108,7 @@ Quickly, however, we can embellish upon the out of the box jQuery function by pl
 
 ```javascript
 {% raw %}
-$(document).ready
+$(document).ready;
 {% endraw %}
 ```
 
@@ -176,7 +178,7 @@ Yields,
 
 ```javascript
 {% raw %}
-job(function(){
+job(function($){
   return console.log(`The Html has been parsed. ➡️
   The DOM has been rendered. ➡️
   We can now go to work.`)
@@ -227,7 +229,7 @@ Finally, via `command + V`, paste the code into your Javascript console command 
 // Set the global variable
 var job = $(document).ready;
 // Construct the function
-job(function(){
+job(function($){
   // Wait for the "DOM is complete" message from the Html parser
   return console.log(`The Html has been parsed ➡️
   The DOM has been rendered ➡️
