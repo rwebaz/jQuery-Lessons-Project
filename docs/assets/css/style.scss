@@ -1,7 +1,7 @@
 ---
 
 ---
-/* Style template scss Dtd 02-11-18 pm */
+/* Style template scss Dtd 02-11-18 */
 /* @import 'jekyll-theme-cayman'; */
 @import "{{ site.theme }}";
 
@@ -26,7 +26,7 @@
 }
 /* End Page Header From theme */
 
-/* Set the Rule for a Custom hard return tags */
+/* Set the Rule for a Custom hard return tag */
 .green-groove {
     border: 3px groove green;
 }
@@ -167,3 +167,4 @@ nav.nav-primary li a {
   list-style: none;
   margin: 10px;
 }
+   
