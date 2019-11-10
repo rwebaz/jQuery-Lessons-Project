@@ -598,8 +598,7 @@ package.json
 yarn.lock
 #
 # gem
-# Commit all gem-lock
-# bundle install / update
+# Commit all gem-lock via bundle update
 # gemfile
 # gemfile.lock
 #
