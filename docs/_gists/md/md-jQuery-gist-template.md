@@ -3,10 +3,10 @@ title: Shell Gist
 layout: default
 excerpt: Place the introducing line of text ie.) the 'tagline' here ...
 hint: Place the intro paragraph ie.) the 'hypothesis' here ...
-repo: Shell-Lessons-Project
+repo: jQuery-Lessons-Project
 ver_date: 11-20-19
 navigation_weight: 8
-categories: template
+categories: page
 ---
 {% include toc.md %}
 
