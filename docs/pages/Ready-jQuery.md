@@ -2,15 +2,19 @@
 title: Ready jQuery
 layout: default
 excerpt: Confirmation must be received in the form of a message from the DOM ...
-version: Page Template md Dtd 02-10-18
+hint: Out of the box, the jQuery object provides a jQuery function represented by the dollar sign $ that accepts a single parameter for its solo argument.
+repo: jQuery-Lessons-Project
+ver_date: 11-20-19
 navigation_weight: 8
-categories: DOM
+categories: page
 ---
-# {{ page.title }}
-
-{{ page.excerpt }}
-
 {% include toc.md %}
+
+## First Subtitle
+
+> **Hint**. {{ page.hint }}
+
+More to come ...
 
 ## Window onLoad
 
@@ -250,24 +254,16 @@ Without the worry of the alias dollar sign `$` being used by another program to 
 
 ## Last Subtitle
 
-**Note**. The above synopsis was derived from an book written by Jonathan Chaffer and Karl Swedberg [[2](#JQUERY4TH){:.red}].
+More to come ...
 
-```liquid
-{% raw %}
-Enjoy the successful output!
-{% endraw %}
-```
+***
 
-{% include brackets-ide.md %}
-
-{% include sources-and-uses.md %}
+**Note**. The above synopsis was derived from a book written by Jonathan Chaffer [[1](#JQUERY4TH){:.red}] and Karl Swedberg [[2](#KSWEDBERG){:.red}].
 
 1. {:#JQUERY4TH}[Learning jQuery: 4th Edition](https://www.it-ebooks.info/){:title='Click to Visit the Landing page for Learning jQuery, 4th Edition by Jonathan Chaffer and Karl Swedberg'}{:target='_blank'} by Jonathan Chaffer and [[Karl Swedberg](#KSWEDBERG){:.red}]. Published by © 2007 - 2013 [PACKTpub.com](https://www.packtpub.com/){:title='Click to Visit the Home page of Packt Pub dot com'}{:target='_blank'}.
 
-### External Sources
+1. {:#KSWEDBERG}[Gmail: Karl Swedberg](Mailto:kswedberg@gmail.com?subject=[Learning jQuery, 4th Edition ...]&body=Hello Karl: I want to thank you for writing Learning jQuery, 4th Edition with Jonathan Chaffer. I have cited your work at my rendition of the 'jQuery Lessons Project' at GitHub Pages ... Robert. C=> //rwebaz.github.io/jQuery-Lessons-Project/pages/Ready-jQuery.md){:title='Click to Launch your designated system email program to send a fully populated electronic letter to the Gmail address of Karl Swedberg'}
 
-- {:#KSWEDBERG}[Gmail: Karl Swedberg](Mailto:kswedberg@gmail.com?subject=[Learning jQuery, 4th Edition ...]&body=Hello Karl: I want to thank you for writing Learning jQuery, 4th Edition with Jonathan Chaffer. I have cited your work at my rendition of the 'jQuery Lessons Project' at GitHub Pages ... Robert. C=> //rwebaz.github.io/jQuery-Lessons-Project/pages/Ready-jQuery.md){:title='Click to Launch your designated system email program to send a fully populated electronic letter to the Gmail address of Karl Swedberg'}.
+***
 
-- The [Project Source Links](https://mminail.github.io/jQuery/Source-jQuery-Links.htm){:title="Click to Visit the Source Links page of the jQuery Lessons Project at GitHub pages"}{:target="_blank"} page of the jQuery Lessons Project. Published by © 2017 - 2018 [Mminail.github.io](https://mminail.github.io/){:title="Click to Visit the Concept Library of the Medical Marijuana Initiative of North America - International Limited, an Arizona Benefit Corporation"}{:target="_blank"}.
-
-**Note**. This page crafted with {{ page.version }}.
+{% include patreon-link.md %}
